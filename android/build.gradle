@@ -1,4 +1,4 @@
-group 'com.example.phoneinformations'
+group 'com.komche.phoneinformations'
 version '1.0'
 
 buildscript {

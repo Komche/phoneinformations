@@ -1,4 +1,4 @@
-package com.example.phoneinformations;
+package com.komche.phoneinformations;
 
 import androidx.annotation.NonNull;
 

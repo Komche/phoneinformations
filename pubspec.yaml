@@ -1,6 +1,6 @@
 name: phoneinformations
-description: A new Flutter plugin project.
-version: 0.0.1
+description: plugin to retrieve phone informations.
+version: 1.0.0
 homepage:
 
 environment:
@@ -37,7 +37,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.phoneinformations
+        package: com.komche.phoneinformations
         pluginClass: PhoneinformationsPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
