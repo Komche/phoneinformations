@@ -1,3 +1,4 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* First version of the package
+* Ability to recover information from an android phone
