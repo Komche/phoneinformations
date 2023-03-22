@@ -38,6 +38,8 @@ class _MyAppState extends State<MyApp> {
   String cid = "";
   String lac = "";
   String simOperator = "";
+  String mobileNetworkCode = "";
+  String mobileCountryCode = "";
 
   @override
   void initState() {
@@ -47,10 +49,10 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    Phoneinformations phoneinformations = Phoneinformations();
+    PhoneInfo phoneInfos;
 
     try {
-      var phoneInfos = await phoneinformations.getPhoneInformation();
+      phoneInfos = await Phoneinformations.getPhoneInformation();
       model = phoneInfos.model;
       andoidVersion = phoneInfos.andoidVersion;
       serial = phoneInfos.serial;
@@ -63,6 +65,8 @@ class _MyAppState extends State<MyApp> {
       subscriberID = phoneInfos.subscriberID;
       networkCountryISO = phoneInfos.networkCountryISO;
       simCountryISO = phoneInfos.simCountryISO;
+      mobileNetworkCode = phoneInfos.mobileNetworkCode;
+      mobileCountryCode = phoneInfos.mobileCountryCode;
       softwareVersion = phoneInfos.softwareVersion;
       voiceMailNumber = phoneInfos.voiceMailNumber;
       networkType = phoneInfos.networkType;
@@ -120,6 +124,12 @@ class _MyAppState extends State<MyApp> {
             ),
             Center(
               child: Text('simOperator: $simOperator'),
+            ),
+            Center(
+              child: Text('mobileNetworkCode: $mobileNetworkCode'),
+            ),
+            Center(
+              child: Text('mobileCountryCode: $mobileCountryCode'),
             ),
             Center(
               child: Text('SIMCountryISO: $simCountryISO'),

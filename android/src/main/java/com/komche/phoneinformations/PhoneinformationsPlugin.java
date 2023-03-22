@@ -55,7 +55,7 @@ public class PhoneinformationsPlugin implements FlutterPlugin, MethodCallHandler
     } else if (call.method.equals("getPhoneInformations")) {
       String model = android.os.Build.MODEL;
       String andoidVersion = android.os.Build.VERSION.RELEASE;
-      String sdkInt = android.os.Build.VERSION.SDK_INT+"";
+      String sdkInt = android.os.Build.VERSION.SDK_INT + "";
       String serial = android.os.Build.SERIAL;
       String id = android.os.Build.ID;
       String manufacturer = android.os.Build.MANUFACTURER;
@@ -76,6 +76,8 @@ public class PhoneinformationsPlugin implements FlutterPlugin, MethodCallHandler
 
       String simNumber = telephonyManager.getLine1Number();
       String simOperator = telephonyManager.getSimOperatorName();
+      String mobileNetworkCode = telephonyManager.getSimOperator().substring(3);
+      String mobileCountryCode = telephonyManager.getSimOperator().substring(0,3);
       String networkCountryISO = telephonyManager.getNetworkCountryIso();
       String SIMCountryISO = telephonyManager.getSimCountryIso();
       String softwareVersion = telephonyManager.getDeviceSoftwareVersion();
@@ -113,6 +115,8 @@ public class PhoneinformationsPlugin implements FlutterPlugin, MethodCallHandler
       phoneInfo.put("cid", cid);
       phoneInfo.put("lac", lac);
       phoneInfo.put("simOperator", simOperator);
+      phoneInfo.put("mobileNetworkCode", mobileNetworkCode);
+      phoneInfo.put("mobileCountryCode", mobileCountryCode);
 
       result.success(phoneInfo);
     } else {
@@ -227,48 +231,48 @@ public class PhoneinformationsPlugin implements FlutterPlugin, MethodCallHandler
   }
 
   private HashMap<String, Object> getCellInfo(TelephonyManager telephonyManager) {
-    int cid=0, lac=0;
+    int cid = 0, lac = 0;
     HashMap<String, Object> locationInfo = new HashMap<>();
 
-    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
-
-      List<CellInfo> cellInfoList = telephonyManager.getAllCellInfo();
-      if (cellInfoList != null) {
-        for (CellInfo cellInfo : cellInfoList) {
-          // if (cellInfo.isRegistered()) {
-            if (cellInfo instanceof CellInfoGsm) {
-              cid = ((CellInfoGsm) cellInfo).getCellIdentity().getCid();
-              lac = ((CellInfoGsm) cellInfo).getCellIdentity().getLac();
-            } else if (cellInfo instanceof CellInfoCdma) {
-              cid = ((CellInfoCdma) cellInfo).getCellIdentity().getBasestationId();
-              lac = ((CellInfoCdma) cellInfo).getCellIdentity().getSystemId();
-            } else {
-
-              return locationInfo;
-            }
-          // }
-        }
-        locationInfo.put("cid", cid);
-        locationInfo.put("lac", lac);
-        return locationInfo;
-      }
-    } else {
+    try {
       CellLocation cellLocation = telephonyManager.getCellLocation();
-      //CellLocation location = CellLocationSingleData.fromCellInfo(cellLocation);
+      // CellLocation location = CellLocationSingleData.fromCellInfo(cellLocation);
       if (cellLocation instanceof GsmCellLocation) {
         cid = ((GsmCellLocation) cellLocation).getCid();
         lac = ((GsmCellLocation) cellLocation).getLac();
       } else if (cellLocation instanceof CdmaCellLocation) {
         cid = ((CdmaCellLocation) cellLocation).getBaseStationId();
         lac = ((CdmaCellLocation) cellLocation).getSystemId();
+      } 
+      locationInfo.put("cid", cid);
+      locationInfo.put("lac", lac);
+      return locationInfo;
+    } catch (Exception e) {
+      List<CellInfo> cellInfoList = telephonyManager.getAllCellInfo();
+      if (cellInfoList != null) {
+        for (CellInfo cellInfo : cellInfoList) {
+          // if (cellInfo.isRegistered()) {
+          if (cellInfo instanceof CellInfoGsm) {
+            cid = ((CellInfoGsm) cellInfo).getCellIdentity().getCid();
+            lac = ((CellInfoGsm) cellInfo).getCellIdentity().getLac();
+          } else if (cellInfo instanceof CellInfoCdma) {
+            cid = ((CellInfoCdma) cellInfo).getCellIdentity().getBasestationId();
+            lac = ((CellInfoCdma) cellInfo).getCellIdentity().getSystemId();
+          }
+          // }
+        }
         locationInfo.put("cid", cid);
         locationInfo.put("lac", lac);
         return locationInfo;
-      } else {
-
-        return locationInfo;
       }
     }
+
+    // if (android.os.Build.VERSION.SDK_INT >=
+    // android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+
+    // } else {
+
+    // }
     locationInfo.put("cid", cid);
     locationInfo.put("lac", lac);
     return locationInfo;

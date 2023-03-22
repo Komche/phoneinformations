@@ -1,4 +1,3 @@
-import 'dart:collection';
 import 'dart:convert';
 
 class PhoneInfo {
@@ -22,6 +21,8 @@ class PhoneInfo {
   String cid = "";
   String lac = "";
   String simOperator = "";
+  String mobileNetworkCode = "";
+  String mobileCountryCode = "";
   PhoneInfo({
     required this.model,
     required this.andoidVersion,
@@ -43,6 +44,8 @@ class PhoneInfo {
     required this.cid,
     required this.lac,
     required this.simOperator,
+    required this.mobileNetworkCode,
+    required this.mobileCountryCode
   });
 
   PhoneInfo copyWith({
@@ -66,6 +69,8 @@ class PhoneInfo {
     String? cid,
     String? lac,
     String? simOperator,
+    String? mobileNetworkCode,
+    String? mobileCountryCode,
   }) {
     return PhoneInfo(
       model: model ?? this.model,
@@ -88,6 +93,8 @@ class PhoneInfo {
       cid: cid ?? this.cid,
       lac: lac ?? this.lac,
       simOperator: simOperator ?? this.simOperator,
+      mobileNetworkCode: mobileNetworkCode ?? this.mobileNetworkCode,
+      mobileCountryCode: mobileCountryCode ?? this.mobileCountryCode,
     );
   }
 
@@ -113,6 +120,8 @@ class PhoneInfo {
       'cid': cid,
       'lac': lac,
       'simOperator': simOperator,
+      'mobileNetworkCode': mobileNetworkCode,
+      'mobileCountryCode': mobileCountryCode,
     };
   }
 
@@ -138,6 +147,8 @@ class PhoneInfo {
       cid: map['cid'] ?? '',
       lac: map['lac'] ?? '',
       simOperator: map['simOperator'] ?? '',
+      mobileNetworkCode: map['mobileNetworkCode'] ?? '',
+      mobileCountryCode: map['mobileCountryCode'] ?? '',
     );
   }
 
@@ -175,7 +186,9 @@ class PhoneInfo {
         other.networkGeneration == networkGeneration &&
         other.cid == cid &&
         other.lac == lac &&
-        other.simOperator == simOperator;
+        other.simOperator == simOperator &&
+        other.mobileNetworkCode == mobileNetworkCode &&
+        other.mobileNetworkCode == mobileNetworkCode;
   }
 
   @override

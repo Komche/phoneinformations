@@ -1,10 +1,10 @@
-import 'dart:collection';
 
-import 'package:phoneinformations/model/phoneInfos.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import 'model/phoneInfos.dart';
 import 'phoneinformations_method_channel.dart';
 
+export 'model/phoneInfos.dart';
 abstract class PhoneinformationsPlatform extends PlatformInterface {
   /// Constructs a PhoneinformationsPlatform.
   PhoneinformationsPlatform() : super(token: _token);
