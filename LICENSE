@@ -1,37 +1,21 @@
-phoneinformations - Licence - Version 1.0.0
+MIT License
 
-- English
+Copyright (c) 2023 Abdoul Razak Adamou Komche
 
-    1. Use, modification, and distribution of this plugin are permitted provided that the following conditions are met:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-    2. All copies of this plugin must retain this entire license notice and the copyright notice.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-    3. Use of this plugin is at your own risk. The author shall not be liable for any direct or indirect damages arising from the use of this plugin.
-
-    4. This plugin is provided as is, without any express or implied warranties.
-
-    5. If you use this plugin in a project, please give credit to the plugin by including the plugin name and version in the credits of your application.
-
-    6. If you modify this plugin, you must retain this license and include a notice that the plugin has been modified.
-
-    7. This license may be modified at any time by the author.
-
-    8. By using this plugin, you agree to the terms of this license.
-
-- Français
-
-    1. L'utilisation, la modification et la distribution de ce plugin sont autorisées, à condition que les conditions suivantes soient respectées :
-
-    2. Toutes les copies de ce plugin doivent conserver l'intégralité de cette licence ainsi que les informations de copyright et de droit d'auteur.
-
-    3. L'utilisation de ce plugin est à vos propres risques. L'auteur ne pourra en aucun cas être tenu responsable de tout dommage direct ou indirect résultant de l'utilisation de ce plugin.
-
-    4. Ce plugin est fourni tel quel, sans aucune garantie expresse ou implicite.
-
-    5. Si vous utilisez ce plugin dans un projet, veuillez mentionner le nom et la version du plugin dans les crédits de votre application.
-
-    6. Si vous modifiez ce plugin, vous devez conserver cette licence et inclure une note indiquant que le plugin a été modifié.
-
-    7. Cette licence peut être modifiée à tout moment par l'auteur.
-
-    8. En utilisant ce plugin, vous acceptez les termes de cette licence.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

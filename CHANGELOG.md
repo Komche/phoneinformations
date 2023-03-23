@@ -6,3 +6,8 @@
 ## 1.0.1
 
 * Added Mobile Network Code (MNC) & Mobile Country Code (MCC)
+
+## 1.0.2
+
+* Documentation updated
+* License updated
