@@ -1,6 +1,6 @@
 name: phoneinformations
 description: plugin to retrieve phone informations.
-version: 1.0.2
+version: 1.0.3
 homepage:
 repository: https://github.com/Komche/phoneinformations.git
 

@@ -11,3 +11,7 @@
 
 * Documentation updated
 * License updated
+
+## 1.0.3
+
+* Updating dependencies
