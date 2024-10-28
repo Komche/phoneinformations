@@ -1,5 +1,5 @@
 name: phoneinformations
-description: plugin to retrieve phone informations.
+description: This plugin allows you to retrieve information from a device. For example model, OS version, device brand, etc.
 version: 1.0.3
 homepage:
 repository: https://github.com/Komche/phoneinformations.git

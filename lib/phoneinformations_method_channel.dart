@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'model/phoneInfos.dart';
+import 'model/phone_infos.dart';
 import 'phoneinformations_platform_interface.dart';
 
 /// An implementation of [PhoneinformationsPlatform] that uses method channels.
