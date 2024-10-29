@@ -73,11 +73,20 @@ public class PhoneinformationsPlugin implements FlutterPlugin, MethodCallHandler
         simSerialNumber = telephonyManager.getSimSerialNumber();
         subscriberID = telephonyManager.getDeviceId();
       }
-
+      String mobileNetworkCode = "";
+      String mobileCountryCode = "";
+      
       String simNumber = telephonyManager.getLine1Number();
       String simOperator = telephonyManager.getSimOperatorName();
-      String mobileNetworkCode = telephonyManager.getSimOperator().substring(3);
-      String mobileCountryCode = telephonyManager.getSimOperator().substring(0,3);
+      try{
+          mobileNetworkCode = telephonyManager.getSimOperator().substring(3);
+          mobileCountryCode = telephonyManager.getSimOperator().substring(0,3);
+      }catch(Exception e){
+          mobileNetworkCode = "Unknown";
+          mobileCountryCode = "Unknown";
+        Log.d("log", "Exception: " + e.getMessage());
+      }
+     
       String networkCountryISO = telephonyManager.getNetworkCountryIso();
       String SIMCountryISO = telephonyManager.getSimCountryIso();
       String softwareVersion = telephonyManager.getDeviceSoftwareVersion();

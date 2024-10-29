@@ -10,7 +10,7 @@ Add `phoneinformations` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  phoneinformations: ^1.0.0
+  phoneinformations: ^1.0.4
 ```
 
 ## Usage
